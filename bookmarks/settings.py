@@ -136,3 +136,6 @@ EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=config.boolean)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='username')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='password')
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
