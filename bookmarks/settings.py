@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "images.apps.ImagesConfig",
 ]
 
 MIDDLEWARE = [
@@ -131,11 +132,16 @@ LOGOUT_URL = "logout"
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = config('EMAIL_HOST', default='email_host')
-EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=config.boolean)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='username')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='password')
+EMAIL_HOST = config("EMAIL_HOST", default="email_host")
+EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=config.boolean)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="username")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="password")
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "account.authentication.EmailAuthBackend",
+]
