@@ -7,7 +7,7 @@
 
       {% endblock %}
     </title>
-    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/icon.svg' %}" type="image/x-icon">
     <link href="{% static 'css/base.css' %}" rel="stylesheet" />
   </head>
 
@@ -16,7 +16,7 @@
       <span class="logo">Bookmarks</span>
       {% if request.user.is_authenticated %}
       <ul class="menu">
-      <li {% if section=="dashboard" %} class="selected"{% endif %}>
+        <li{% if section == "dashboard" %} class="selected"{% endif %}>
       <a href="{% url "dashboard" %}">My dashboard</a>
       </li>
       <li {% if section == "images" %}class="selected"{% endif %}>
@@ -51,20 +51,13 @@
 
       {% endblock %}
     </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // DOM loaded
-        {% block domready %}
-        {% endblock %}
-      })
-  </script>
   <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
   <script>
     const csrftoken = Cookies.get('csrftoken');
     document.addEventListener('DOMContentLoaded', (event) => {
-    // DOM loaded
-    {% block domready %}
-    {% endblock %}
+      // DOM loaded
+      {% block domready %}
+      {% endblock %}
     })
     </script>
   </body>
