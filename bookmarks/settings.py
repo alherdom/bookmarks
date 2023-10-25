@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "images.apps.ImagesConfig",
+    "easy_thumbnails",
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,9 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "account.authentication.EmailAuthBackend",
 ]
+
+if DEBUG:
+    import mimetypes
+
+    mimetypes.add_type("application/javascript", ".js", True)
+    mimetypes.add_type("text/css", ".css", True)
