@@ -34,7 +34,6 @@ class Image(models.Model):
     def get_absolute_url(self):
         return reverse("images:detail", args=[self.id, self.slug])
 
-
-users_like = models.ManyToManyField(
-    settings.AUTH_USER_MODEL, related_name="images_liked", blank=True
-)
+    users_like = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="images_liked", blank=True
+    )
