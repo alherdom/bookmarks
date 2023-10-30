@@ -112,6 +112,7 @@ input, textarea {
 input[type=submit], a.button {
     font-weight:bold;
     background:#12c064;
+    border-radius: 26px;
     color:#fff;
     padding:10px 20px;
     font-size:14px;
