@@ -39,4 +39,3 @@ user_model.add_to_class(
         "self", through=Contact, related_name="followers", symmetrical=False
     ),
 )
-
