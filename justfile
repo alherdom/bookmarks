@@ -1,6 +1,9 @@
 shell:
     python manage.py shell
 
+debugsqlshell:
+    python manage.py debugsqlshell
+
 migrate:
     python manage.py migrate
 

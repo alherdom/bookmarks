@@ -6,3 +6,5 @@ psycopg2-binary
 pillow
 requests
 easy-thumbnails
+django-debug-toolbar
+redis
